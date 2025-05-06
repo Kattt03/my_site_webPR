@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resume_Kkkk</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <button id="themeToggle">Switch theme</button>
+
+    <header>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/kateryna-mykhailyshyn-0179122b5/" target="_blank" class="linkedin-btn">LinkedIn</a>
+            <a href="https://www.facebook.com/share/16Dv9R3kDG/?mibextid=wwXIfr" target="_blank" class="facebook-btn">Facebook</a>
+            <p id="themeToggleText">
+                <i class="fas fa-sun"></i> / <i class="fas fa-moon"></i> Switch theme
+            </p>
+            
+            
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="parent-container">
+            <div class="vertical-bar">
+                <div class="circle">
+                    <img src="images/photo_2025-03-26_12-07-12.jpg" alt="My Photo" />
+                </div>
+                <div class="name-container">
+                    <h1>Kateryna Mykhailyshyn</h1>
+                    <p>Cybersecurity student</p>
+                </div>
+                <div class="about">
+                    <p>Hi! I am a 3rd year student of the specialty "Cybersecurity" at Lviv Polytechnic National University. I am a co-founder of the startup BookLoop - a platform that allows literature lovers to exchange and sell read books. The project not only promotes the development of cultural exchange, but also supports an environmental initiative through the reuse of literature. Since August 2024, I have been interning at UnderDefense in the direction of SOC Analytics, where I am engaged in threat analysis, detection of anomalous activities in networks and organization of a cybersecurity monitoring system. I actively participate in professional events, such as IT ARENA, as well as in meetings with representatives of startups, which allows me to constantly improve my knowledge and professional connections.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="side-content">
+            <div class="education">
+                <h2>EDUCATION</h2>
+                <div class="education-item">
+                    <h3>-----2020 - 2023: Accounting and Taxation</h3>
+                    <p><strong>Separate structural unit of the National University of Life Resources and Environmental Management of Ukraine, Berezhany Vocational College</strong></p>
+                </div>
+
+                <div class="education-item">
+                    <h3>-----2022 - 2026: Cybersecurity</h3>
+                    <p><strong>Lviv Polytechnic National University</strong></p>
+                </div>
+
+                <div class="education-item">
+                    <h3>-----2022 - 2026: Masters in Law (Part-time)</h3>
+                    <p><strong>Lviv National University of Veterinary Medicine and Biotechnology named after Stepan Gzytskyi</strong></p>
+                </div>
+            </div>
+
+            <div class="experience">
+                <h2>EXPERIENCE</h2>
+                <div class="experience-item">
+                    <h3>-----Project:</h3>
+                    <p><strong>BookLoop is a platform/application for literature lovers where users sell and exchange their own read books with other users. 
+                        The app acts as an intermediary by providing tools for sharing and selling, namely convenient search and interaction 
+                        with other users through chat/discussions. We are becoming a so-called social network for book lovers.</strong><br>
+                    </p>
+                </div>
+
+                <div class="experience-item">
+                    <h3>-----Certificates:</h3>
+                    <p><strong>"IoT Fundamentals: Connecting Things" - Cisco;</strong><br></p>
+                    <p><strong>"Introduction to IoT" - Cisco;</strong><br></p>
+                    <p><strong>"Uitware Azure Bootcamp" - Microsoft Azure;</strong><br></p>
+                    <p><strong>"Successful Startup: From Idea to Scaling" - Prometheus;</strong><br></p>
+                    <p><strong>"Internet Security During War: A Practical Course" - Prometheus.</strong><br></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="comments-section">
+        <h2>Comments from previous employers!</h2>
+        <ul id="commentsList"></ul>
+    </section>
+
+    <footer class="footer"> 
+        <div class="footer-content">
+            <div class="info-block">
+                <h3>System and Browser Info:</h3>
+                <p><strong>Cookie Enabled:</strong> <span id="cookieStatus"></span></p>
+                <p><strong>Online Status:</strong> <span id="onlineStatus"></span></p>
+                <p><strong>Language:</strong> <span id="language"></span></p>
+                <p style="white-space: nowrap;"><strong>User Agent:</strong> <span id="userAgent"></span></p>
+                <p><strong>Platform:</strong> <span id="platform"></span></p>
+                <p><strong>Screen Resolution:</strong> <span id="screenResolution"></span></p>
+            </div>
+            <div class="contact-block">
+                <h3>Contact:</h3>
+                <p>
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:kateryna.mykhailyshyn.kb.2022@lpnu.ua">kateryna.mykhailyshyn.kb.2022@lpnu.ua</a>
+                </p>
+                <p>
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+380501169075">+380 (50) 11 69 075</a>
+                </p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Kateryna Mykhailyshyn. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        const browserData = {
+            userAgent: navigator.userAgent,
+            platform: navigator.platform,
+            language: navigator.language,
+            cookieEnabled: navigator.cookieEnabled,
+            screenResolution: `${screen.width}x${screen.height}`,
+            onlineStatus: navigator.onLine
+        };
+    
+        document.getElementById("cookieStatus").innerText = browserData.cookieEnabled;
+        document.getElementById("onlineStatus").innerText = browserData.onlineStatus;
+        document.getElementById("language").innerText = browserData.language;
+        document.getElementById("userAgent").innerText = browserData.userAgent;
+        document.getElementById("platform").innerText = browserData.platform;
+        document.getElementById("screenResolution").innerText = browserData.screenResolution;
+    
+        for (let key in browserData) {
+            localStorage.setItem(key, browserData[key]);
+        }
+    
+        console.log("Інформація про браузер та ОС збережена в localStorage та виведена у футер!");
+    </script>
+
+    <script>
+        fetch('https://jsonplaceholder.typicode.com/posts/16/comments')
+            .then(response => response.json())
+            .then(comments => {
+                const list = document.getElementById('commentsList');
+                comments.forEach(comment => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `<strong>${comment.name}</strong> (${comment.email}):<br>${comment.body}`;
+                    list.appendChild(listItem);
+                });
+            })
+    </script>
+    
+    <div id="feedbackModal" class="modal">
+        <div class="modal-content">
+            <span id="closeModal" class="close">&times;</span>
+            <h2>Feedback form:</h2>
+            <form action="https://formspree.io/f/mpwdwzln" method="POST">
+                <label for="name">Your name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+    
+                <label for="phone">Phone number:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea><br><br>
+    
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+    
+    <script>
+        const modal = document.getElementById("feedbackModal");
+        const closeModal = document.getElementById("closeModal");
+    
+        setTimeout(() => {
+            modal.style.display = "block";
+        }, 60000);
+    
+        closeModal.onclick = function () {
+            modal.style.display = "none";
+        }
+    
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+    
+    <script>
+        function setAutoTheme() {
+            const hours = new Date().getHours();
+            const body = document.body;
+    
+            if (hours >= 7 && hours < 21) {
+                body.classList.remove('dark-mode');
+            } else {
+                body.classList.add('dark-mode');
+            }
+        }
+    
+        setAutoTheme();
+        const themeToggle = document.getElementById('themeToggleText');
+    
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+    
+            const sunIcon = themeToggle.querySelector('.fa-sun');
+            const moonIcon = themeToggle.querySelector('.fa-moon');
+    
+            if (document.body.classList.contains('dark-mode')) {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'inline';
+            } else {
+                sunIcon.style.display = 'inline';
+                moonIcon.style.display = 'none';
+            }
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
